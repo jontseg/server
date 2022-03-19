@@ -19,6 +19,10 @@ const port = process.env.PORT || 3001
 app.listen(port, () => {
         console.log("Server running!");
     });
+
+app.get('/', (req,res) => {
+        res.send("home page");
+});
 db.sequelize.sync().then(() => {
     app.listen(port, () => {
         console.log("Server running on Port 3001");
